@@ -64,6 +64,7 @@ body{
 .logo {
 	float: left;
 	margin-top:1.5%;
+	z-index:1;
 }
 .cart {
 	float: right;
