@@ -11,6 +11,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".dropdown img.flag").addClass("flagvisibility");
+
+			$(".dropdown dt a").click(function () {
+				$(".dropdown dd ul").toggle();
+			});
+
+			$(".dropdown dd ul li a").click(function () {
+				var text = $(this).html();
+				$(".dropdown dt a span").html(text);
+				$(".dropdown dd ul").hide();
+				$("#result").html("Selected value is: " + getSelectedValue("sample"));
+			});
+
+			function getSelectedValue(id) {
+				return $("#" + id).find("dt a span.value").html();
+			}
+
+			$(document).bind('click', function (e) {
+				var $clicked = $(e.target);
+				if (!$clicked.parents().hasClass("dropdown"))
+					$(".dropdown dd ul").hide();
+			});
+
+
+			$("#flagSwitcher").click(function () {
+				$(".dropdown img.flag").toggleClass("flagvisibility");
+			});
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="css/global.css">
+	<!--thumb slider--->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			$("#slider").responsiveSlides({
+				auto: true,
+				manualControls: '#slider3-pager',
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -59,28 +104,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="main">
-		<div class="content-box">
-			<div class="wrap">
-				<div class="banner2">
-					<a href="#">
-						<div class="price">Ksh.580k</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="main">
-		<div class="content-box1">
-			<div class="wrap">
-				<div class="banner2">
-					<a href="#">
-						<div class="price">Ksh.409k</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div class="main-content">
 		<div class="wrap">
 			<div class="main-box">
@@ -88,14 +112,55 @@
 					<h1 id = "products">Featured Products</h1>
 				</div>
 				<div class="section group">
+				    
+				
+						<div class="slider">
+							<!-- Slideshow 3 -->
+							<ul class="rslides" id="slider">
+								<li>
+									<img src="images/pic10.jpg" alt="">
+								</li>
+								<li>
+									<img src="images/pic9.jpg" alt="">
+								</li>
+								<li>
+									<img src="images/pic8.jpg" alt="">
+								</li>
+								<li>
+									<img src="images/pic11.jpg" alt="">
+								</li>
+								<li>
+									<img src="images/pic12.jpg" alt="">
+								</li>
+								<li>
+									<img src="images/pic13.jpg" alt="">
+								</li>
+							</ul>
+				
+							
 					<div class="col_1_of_4 span_1_of_4">
 						<img src="images/pic.jpg" alt="" />
+						
 						<div class="grid_desc">
-							<p class="title">Lorem ipsum dolor sitconsectetueradipis</p>
-							<p class="title1">Lorem ipsum dolor sitconsectetueradipis</p>
+							<p class="title">Mazda Demio</p>
+							<p class="title1">
+							      <ul>
+							                  <li>TYPE: 4 door </li> 
+							                   <li>YOM: 2009</li>
+                                               <li>MILEAGE: 93,815km</li>
+                                               <li>CONDITION: Used</li>
+                                               <li>TRANSMISSION: Auto</li>
+                                            
+                                               <li>Description</li>
+                                               <li>Extremely clean</li>
+                                               <li>1300cc automatic transmission</li>
+                                               <li>Accident free</li>
+                                               <li>Clean interior and exterior</li>
+									</ul>
+											   </p>
 							<div class="price1" style="height: 19px;">
-								<span class="reducedfrom">$66.00</span>
-								<span class="actual">$12.00</span>
+								<span class="reducedfrom">Ksh.599,999.00</span>
+								<span class="actual">Ksh.665,000.00</span>
 							</div>
 						</div>
 						<div class="Details">
@@ -268,7 +333,7 @@
 				<div class="col_1_of_5 span_1_of_5">
 					<div class="call_info">
 						<p class="txt_3">Feel free to call us:</p>
-						<p class="txt_4">+24727138598</p>
+						<p class="txt_4">+254727138598</p>
 					</div>
 				</div>
 				<div class="col_1_of_5 span_1_of_5">
